@@ -38,6 +38,27 @@ foreach (var user in users)
 
 Console.WriteLine("----------------------------------------------------------------------------------");
 
+Console.WriteLine("Valyuta kursini kiriting:");
+int kurs = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Pul miqdorini kiriting:");
+int miqdor = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"Kurs bo'yicha hisoblangan miqdor: {kurs * miqdor}");
+Console.ReadLine();
+
+Console.Write("Radiusni kiriting = ");
+decimal radius = Convert.ToDecimal(Console.ReadLine());
+const decimal pi = 3.14m;
+decimal S = pi * radius * radius;
+decimal L = 2 * pi * radius;
+Console.WriteLine($"Yuzasi S = {S} \nUzunligi L = {L}");
+Console.ReadLine();
+
+Console.WriteLine("Tug'ilgan yilingizni kiriting");
+int ageYear = Convert.ToInt32(Console.ReadLine());
+int kun = 2025 - ageYear;
+Console.WriteLine($"Yoshingiz kunlarda hisoblanganda: {kun*366}");
+
+
 
 
 
