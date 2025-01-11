@@ -88,7 +88,7 @@ Console.Clear();
 
 //2 vazifa 2 mashq 0 dan aytilgan raqamgaca sonlar yig'indisi
 
-Console.Write("Raqam ayting:");
+Console.Write("Raqam ayting(0 dan siz kiritgan raqamgacha sonlar yig'indisi):");
 int yigindi = 0;
 int numberr = Convert.ToInt32(Console.ReadLine());
 
@@ -103,12 +103,126 @@ Console.Clear();
 
 // 2 vazifa 3 mashq juft toqlikka tekshirish
 int oddEven = 0;
-Console.Write("Raqam kiriting : ");
+Console.Write("Raqam kiriting (Juftlikga tekshirish) : ");
 oddEven = Convert.ToInt32(Console.ReadLine());
 if (oddEven % 2 == 0)
     Console.WriteLine("Juft");
 if (oddEven % 2 == 1)
     Console.WriteLine("Toq");
+Console.ReadKey();
+Console.Clear();
+
+// 3 vazifa 1 mashq tub songa tekshirish
+Console.Write("Tub sonlikka tekshiriladigan son kiriting:");
+int tubSon = int.Parse(Console.ReadLine());
+
+
+if (Tubmi(tubSon))
+    Console.WriteLine($"{tubSon} tub son!");
+else
+    Console.WriteLine($"{tubSon} tub son emas!");
+
+
+
+    static bool Tubmi(int son)
+    {
+        if (son <= 1)
+            return false;
+
+        for (int i = 2; i <= Math.Sqrt(son); i++)
+        {
+            if (son % i == 0)
+                return false;
+        }
+
+        return true;
+    }
+Console.ReadLine();
+Console.Clear();
+
+//3 vazifa 2 mashq "Bo'luvchisiz sonlar "
+Console.WriteLine("1 dan 10 gacha " +
+    "bo'luvchilarini aniqlanadigan sonni kiriting");
+int sonBolinuvchi = int.Parse(Console.ReadLine());
+Console.Write("1 dan 10 gacha bo'linadigan sonlar:");
+for (int i = 2; i <= 10; i++)
+{
+   if(sonBolinuvchi % i == 0)
+        Console.Write($" {i}");
+}
+Console.ReadKey();
+Console.Clear();
+
+
+// 3 vazifa 3 mashq darajaga oshirish
+int sonAsos;
+int kopaytma = 1;
+Console.Write("Darajaga oshiriladigan son kiriting:");
+sonAsos = int.Parse(Console.ReadLine());
+Console.Write("Darajani kiriting:");
+int sonDaraja = int.Parse(Console.ReadLine());
+for (int i = 1; i <= sonDaraja; i++)
+{
+    kopaytma = kopaytma * sonAsos;
+}
+Console.WriteLine($"Javob: {kopaytma}");
+Console.ReadLine();
+Console.Clear();
+
+//3 vazifa 4 mashq xarajatlar
+
+Console.WriteLine("Xarajatlaringizni (,)(vergul) bilan ajratib yozing: ");
+string input = Console.ReadLine();
+int[] xarajatInput = input.Split(',')
+    .Select(int.Parse)
+    .ToArray();
+int outputXarajat = xarajatInput.Sum();
+Console.WriteLine($"Xarajatlar yig'indisi: {outputXarajat}");
+Console.ReadLine();
+
+// 3 vazifa 5 mashq Armstrong son
+//Armstrong soni
+Console.Write("Armstrongga tekshiriladigan sonni kiriting:");
+string inputStringArmstrong = Console.ReadLine();
+double inpSon = Convert.ToDouble(inputStringArmstrong);
+double e = inputStringArmstrong.Length;
+double[] inputArray = inputStringArmstrong
+    .ToCharArray()
+    .Select(ch => double.Parse(ch.ToString()))
+    .ToArray();
+double armYigindi = 0;
+foreach (double n in inputArray)
+{
+    armYigindi = armYigindi + Math.Pow(n, e);
+}
+if (Math.Abs(armYigindi - inpSon) < 0.0001)
+    Console.WriteLine($"{armYigindi} soni Armstrong son!");
+else
+    Console.WriteLine($"{inpSon} soni Armstrong son emas!");
+Console.ReadLine();
+
+//3 Vazifa 6 mashq
+Console.Write("Sonni kiriting: ");
+int son = int.Parse(Console.ReadLine());
+
+int sifatliBoluvchilarSoni = 0;
+Console.Write("Sifatli bo'luvchilar: ");
+
+// Bo'luvchilarni tekshiramiz
+for (int i = 1; i < son; i++)
+{
+    if (son % i == 0) // Agar `son` i ga bo'linsa
+    {
+        Console.Write(i + " "); // Sifatli bo'luvchini chiqaramiz
+        sifatliBoluvchilarSoni++;
+    }
+}
+
+Console.WriteLine($"\n{son} sonining sifatli bo'luvchilari soni:" +
+    $" {sifatliBoluvchilarSoni}");
+
+
+
 
 
 
