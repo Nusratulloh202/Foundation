@@ -58,6 +58,58 @@ int ageYear = Convert.ToInt32(Console.ReadLine());
 int kun = 2025 - ageYear;
 Console.WriteLine($"Yoshingiz kunlarda hisoblanganda: {kun*366}");
 
+//2  vazida 1 mashq
+Console.Write("1 sonni kiriting : ");
+double firsNumber = Convert.ToDouble(Console.ReadLine());
+Console.Write("Oraliq amalni kiriting (+, -, *, /) : ");
+char charOraliq = Convert.ToChar(Console.ReadLine());
+Console.Write("2 sonni kiriting : ");
+double secondNumber = Convert.ToDouble(Console.ReadLine());
+double natija = 0;
+if (charOraliq == '+')
+    natija = firsNumber + secondNumber;
+Console.WriteLine();
+
+if (charOraliq == '-')
+    natija = firsNumber - secondNumber;
+
+if (charOraliq == '*')
+    natija = firsNumber * secondNumber;
+
+if (charOraliq == '/')
+    natija = firsNumber / secondNumber;
+
+else
+    Console.WriteLine("Belgilanmagan ishora kiritdingiz ");
+
+Console.WriteLine($"javob :{natija}");
+Console.ReadLine();
+Console.Clear();
+
+//2 vazifa 2 mashq 0 dan aytilgan raqamgaca sonlar yig'indisi
+
+Console.Write("Raqam ayting:");
+int yigindi = 0;
+int numberr = Convert.ToInt32(Console.ReadLine());
+
+while (numberr != 0)
+{
+    yigindi = yigindi + numberr;
+    numberr--;
+}
+Console.Write($"javob : {yigindi}");
+Console.ReadLine();
+Console.Clear();
+
+// 2 vazifa 3 mashq juft toqlikka tekshirish
+int oddEven = 0;
+Console.Write("Raqam kiriting : ");
+oddEven = Convert.ToInt32(Console.ReadLine());
+if (oddEven % 2 == 0)
+    Console.WriteLine("Juft");
+if (oddEven % 2 == 1)
+    Console.WriteLine("Toq");
+
 
 
 
