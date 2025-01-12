@@ -224,6 +224,66 @@ Console.WriteLine($"\n{son} sonining sifatli bo'luvchilari soni:" +
 
 
 
+//2 bo'lim 1 vazifa 1 mashq so'z uznligiga taqqoslanib katta kichik qilish
+
+Console.Write("So'z kiriting:");
+string stringText = Console.ReadLine();
+Console.Write("So'zga taqqoslanadigan son kiriting: ");
+int numberString = int.Parse(Console.ReadLine());
+int stringLight = stringText.Length;
+if (numberString >= stringLight)
+{
+    Console.WriteLine($"{stringText.ToUpper()} Kiritgan soninggiz text " +
+        $"uzunligidan katta shu uchun katta harflarda so'z chiqdi.");
+}
+else
+    Console.WriteLine($"{stringText.ToLower()} Kiritgan soninggiz text " +
+        $"uzunligidan kichik shu uchun, kichik harflarda so'z chiqdi.");
+Console.ReadLine();
+Console.Clear();
+
+// 2 bo'lim 1 vazifa 2 mashq  ternary ni if elsega almashtirish.
+int x1 = 15;
+int y1 = 10;
+if (x1 > y1)
+    Console.WriteLine("x soni y sonidan katta.");
+
+else
+{
+    if (x1 < y1)
+        Console.WriteLine("x soni y sonidan kichik.");
+
+    else
+    {
+        if (x1 == y1)
+            Console.WriteLine("x soni y soni bilan teng.");
+
+        else
+            Console.WriteLine("x va y soni bog'liq emas.");
+    }
+}
+Console.ReadLine();
+Console.Clear();
+
+// 2 bo'lim 1 vazifa 3 mashq
+Console.Write("Hafta kunini kiriting: ");
+string daysName = Console.ReadLine().ToLower();
+
+string resultWeak = daysName switch
+{
+    "dushanba" => "Monday",
+    "seshanba" => "Tuesday",
+    "chorshanba" => "Wednesday",
+    "payshanba" => "Thursday",
+    "juma" => "Friday",
+    "shanba" => "Saturday",
+    "yakshanba" => "Sunday",
+    _ => "Xato so'z kiritdingiz."
+
+};
+Console.WriteLine($"{daysName} ingliz tilida: {resultWeak}");
+Console.ReadLine();
+Console.Clear();
 
 
 
