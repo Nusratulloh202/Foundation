@@ -285,6 +285,71 @@ Console.WriteLine($"{daysName} ingliz tilida: {resultWeak}");
 Console.ReadLine();
 Console.Clear();
 
+//2 bo'lim 2 vazifa 1 misol
+Console.Write("Soniyalarni kiriting: ");
+int sekundInput = int.Parse(Console.ReadLine());
+if (sekundInput < 3600)
+{
+    int butunDaqiqa1 = sekundInput / 60;
+    int qoldiqSoniya1 = sekundInput % 60;
+    Console.WriteLine(butunDaqiqa1 + ":" + qoldiqSoniya1);
+}
+if (sekundInput >= 3600)
+{
+    int butunSoat2 = sekundInput / 3600;
+    int butunDaqiqa2 = sekundInput % 3600 / 60;
+    int butunSoniya2 = sekundInput % 60;
+    if (butunSoniya2 < 10)
+    {
+        Console.WriteLine(butunSoat2 + ":" + butunDaqiqa2 + ":" + "0" + butunSoniya2);
+    }
+    else
+        Console.WriteLine(butunSoat2 + ":" + butunDaqiqa2 + ":" + butunSoniya2);
+}
+Console.ReadLine();
+Console.Clear();
+
+// 2 bo'lim 2 vazifa 2 misol Yosh toifasini aniqlash:
+Console.Write("Yoshingizni kiriting:");
+int ageUser = int.Parse(Console.ReadLine());
+
+string resultAge = (ageUser >= 0 && ageUser <= 12) ? "Siz yosh bolasiz" :
+    (ageUser >= 13 && ageUser <= 19) ? "Siz o'smirsiz" :
+    (ageUser >= 20 && ageUser <= 59) ? "Siz kattasiz" :
+    (ageUser >= 60 && ageUser <= 130) ? "Siz keksasiz"
+    : "Ertak aytmang unday yosh yo'q.";
+Console.WriteLine($"{resultAge}.");
+Console.ReadLine();
+Console.Clear();
+
+// 2 bo'lim 2 vazifa 3 misol  O'rtacha ballni hisoblash:
+
+Console.Write("1 fandan olgan balingizni kiriting:");
+int firstScience = int.Parse(Console.ReadLine());
+
+Console.Write("2 fandan olgan balingizni kiriting:");
+int secondScience = int.Parse(Console.ReadLine());
+
+Console.Write("3 fandan olgan balingizni kiriting:");
+int threetScience = int.Parse(Console.ReadLine());
+
+int averageScore = Math.Abs((firstScience +
+    secondScience + threetScience) / 3);
+
+string resultScore = (averageScore >= 80 && averageScore <= 100) ? "A'lo ball." :
+    (averageScore >= 60 && averageScore <= 79) ? "Yaxshi ball." :
+    (averageScore >= 40 && averageScore <= 59) ? "Qoniqarli ball." :
+    (averageScore >= 0 && averageScore <= 39) ? "Qoniqarsiz ball."
+    : "Ball 0 va 100 oralig'ida bo'lsin.";
+Console.WriteLine($"{resultScore}.");
+Console.ReadLine();
+Console.Clear();
+
+
+// 2 bo'lim 2 vazifa 3 misol  "Raqamni toping" o'yini
+// 1 dan 100 gacha tasodifiy son yaratish
+
+Console.ReadLine();
 
 
 
