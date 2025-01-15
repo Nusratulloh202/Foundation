@@ -349,9 +349,108 @@ Console.Clear();
 // 2 bo'lim 2 vazifa 3 misol  "Raqamni toping" o'yini
 // 1 dan 100 gacha tasodifiy son yaratish
 
+Random random = new Random(); int sirliSon = random.Next(1, 101); 
+// 1 dan 100 gacha tasodifiy son
+int taxmin; 
+// Foydalanuvchi kiritadigan son
+bool topildi = false; 
+Console.WriteLine("1 dan 100 gacha bo'lgan sirli sonni toping!"); 
+// Foydalanuvchi sonni to'g'ri topmaguncha davom etadi
+while (!topildi) 
+{ 
+    Console.Write("Sonni kiriting: "); 
+    string kirish = Console.ReadLine();
+    // Foydalanuvchi kiritgan sonni integerga o'girish
+if (int.TryParse(kirish, out taxmin)) 
+    {
+// Ternary operator yordamida maslahat berish
+string javob = (taxmin == sirliSon) 
+            ? "Tabriklaymiz! Siz to'g'ri topdingiz!" 
+            : (taxmin < sirliSon) ? "Sirli son kattaroq!" 
+            : "Sirli son kichikroq!"; Console.WriteLine(javob);
+// Agar topilgan bo'lsa, o'yinni to'xtatadi
+if (taxmin == sirliSon) { topildi = true; }
+    } else
+    { 
+        Console.WriteLine("Iltimos, faqat son kiriting!");
+    }
+}
+
+//2 bo'lib 3 vazifa 1 misol Palindrm so'za tekshirish
+Console.Write("So'zni kiriting: ");
+string inputPalindrom = Console.ReadLine();
+
+if (IsPalindrome(inputPalindrom))
+{
+    Console.WriteLine("Bu so'z palindrom.");
+}
+else
+{
+    Console.WriteLine("Bu so'z palindrom emas.");
+}
+
+
+static bool IsPalindrome(string text)
+{
+    // Oq joy va katta harflarni inobatga olmaslik uchun satrni tozalaymiz va kichik harfga o'tkazamiz
+    text = text.Replace(" ", "").ToLower();
+
+    int length = text.Length;
+
+    for (int i = 0; i < length / 2; i++)
+    {
+        if (text[i] != text[length - i - 1])
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
+//3 bo'lim FOR  LOOP WHILE SIKL 1 vazifa 1 misol
+
+int thausendNumber = 1;
+int thausendPlus = 0;
+Console.Write("Son kiriting sizga 0 dan kiritgan" +
+    " \nraqamezgacha toq sonlar yig'indisini chiqarib beraman:  ");
+int hundertInput = int.Parse(Console.ReadLine());
+while (thausendNumber <= hundertInput)
+{
+    if (thausendNumber % 2 == 1)
+        thausendPlus += thausendNumber;
+
+    thausendNumber++;
+
+}
+Console.WriteLine($"Yig'indisi {thausendPlus}.");
 Console.ReadLine();
+Console.Clear();
 
+//3 bo'lim FOR  LOOP WHILE SIKL 1 vazifa 2 misol
+int[] numbersArray = { 1, 2, 3, 5, 6, 7, 8, 9 };
+int numbersArrayMin = numbersArray.Min();
+int numbersArrayMax = numbersArray.Max();
 
+int numberArrayPlus = numbersArrayMin + numbersArrayMax;
+Console.WriteLine($"Arraydagi min va max yig'indisi {numberArrayPlus}");
+Console.ReadLine();
+Console.Clear();
+
+//3 bo'lim FOR  LOOP WHILE SIKL 1 vazifa 3 misol
+Console.Write("Factoriali hisoblanadigan sonni kiriting: ");
+int inputNumberFactorial = 1;
+inputNumberFactorial = int.Parse(Console.ReadLine());
+int inputYigindiFaktorial=1;
+
+for (int i = 1; i <= inputNumberFactorial; i++)
+{
+    inputYigindiFaktorial*= i;
+}
+Console.WriteLine($"Factorial:{inputYigindiFaktorial}");
+Console.ReadKey();
+Console.Clear();
 
 
 
